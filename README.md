@@ -1,4 +1,5 @@
 ![anyword_logo](https://github.com/konnir/x_grammar_spelling/assets/119952960/f415aef0-dd6b-4223-81be-9ce5d677b53a)
+![Nir_Kon_Logo_inverted (1)](https://github.com/konnir/x_grammar_spelling/assets/119952960/aaae3161-5d93-4e82-87bf-1ac468f1817a)
 
 # x_grammar_spelling
 Check grammar and spelling on X messages with concideration on use of slang, shortcuts and hashtags.
