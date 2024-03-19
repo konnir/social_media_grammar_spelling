@@ -18,8 +18,7 @@ Check grammar and spelling on X messages with concideration on use of slang, sho
   - Train test split and check eqality
   - Train classifier
   - Try to different aproch (if time allow)
-- Web service:![anyword_logo](https://github.com/konnir/x_grammar_spelling/assets/119952960/d88b5531-3373-49a2-9e0e-d246491eaf30)
-
+- Web service:
   - Create Rest server to receive messages and return classificatons
   - Expend to mutiple messaes
 - Demo UI:
