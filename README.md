@@ -1,7 +1,9 @@
+![anyword_logo](https://github.com/konnir/x_grammar_spelling/assets/119952960/f415aef0-dd6b-4223-81be-9ce5d677b53a)
+
 # x_grammar_spelling
 Check grammar and spelling on X messages with concideration on use of slang, shortcuts and hashtags.
 
-## content:
+## Content:
 - Collection and pre-processing of X messages:
   - Collect DS - download and validate X messages to be used in DS 
   - Basic clean - empty, duplicated, URL, special charactes 
@@ -16,7 +18,8 @@ Check grammar and spelling on X messages with concideration on use of slang, sho
   - Train test split and check eqality
   - Train classifier
   - Try to different aproch (if time allow)
-- Web service:
+- Web service:![anyword_logo](https://github.com/konnir/x_grammar_spelling/assets/119952960/d88b5531-3373-49a2-9e0e-d246491eaf30)
+
   - Create Rest server to receive messages and return classificatons
   - Expend to mutiple messaes
 - Demo UI:
