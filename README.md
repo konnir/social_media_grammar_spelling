@@ -18,7 +18,7 @@ It has trained on social media style messages and will support informal english,
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/01227d23-e5dd-4006-b541-3502d995fb8c)
 
 
-## Content (short summary:
+## Content (short summary):
 - Collection and pre-processing of X messages:
   - Tried to look on X API to scrape tweets from there and got cold sholder from the new Management, only 1500 can be scraped for day with frightning licence. 
   - Collected many tweets data sets from all over the internet (turn out that the licence on X change and many were deleted).
@@ -56,13 +56,37 @@ It has trained on social media style messages and will support informal english,
     - Fast on GPU and CPU if needed for inference.
     - Short train time compared to Bert / Roberta / GPT-2 that were candidate for this.
   - Cons:
-    - I took Hugging Face version with PyTorch, it was proably not the best: change the class weights and everyhting didn't work (
+    - I took Hugging Face version with PyTorch, it was proably not the best: change the class weights and everyhting didn't work from there. 
 - Web service:
-  - Create Rest server to receive messages and return classificatons
-  - Expend to mutiple messaes
+  - Create Rest server to receive messages and return classificatons thorough predictor. 
+  - Expends to mutiple messages for later cpu utilization. 
 - Demo UI:
-  - Create a siple ui to type the message and present correctness
-  - Expand ui to show the erros (if time allow)     
+  - For visualization and deeper understanding of the data and the problem domain. 
+  - Create a siple ui to type the message and present if OK or FIX. 
+  - Expand ui to show the OpenAi answer on the message (from test).
+ 
+## Data Exploration (see /ds_exploration/5_M_ds_set_up.ipynb):
+- 3,609,675 tweets.
+- First step, take the first 5 lines to see how to work here:
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/ecad9926-2213-4ae7-936f-886b41a04201)
+- Let's go for df:
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/f0ea291e-257e-4c6e-a456-c65ca9e0acb0)
+- 80,807 nuls were droped.
+- 119,065 duplicates were droped (left one).
+- 939 messages shorter than 4 characters were doped (our task is context).
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/b015d5c8-1532-4e9f-b5b3-477188d8bdd9)
+- longest message is: 31,135 characters.
+- Looking on long messages:
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/9667a0d0-cceb-4fcd-9433-6611bdefb713)
+- Decided to keep the limit of tweeter (280) and droped all longer than this.
+- Looking on messages lenth:
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/5e80b75a-9bbe-48ee-9113-2caf7b0b1327)
+
+
+
+
+
+
 
 ## Licence:
 - The work here is for reasearch purpose.
