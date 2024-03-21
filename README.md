@@ -97,6 +97,27 @@ It has trained on social media style messages and will support informal english,
 
 - save to clean_train_tweets.csv for later work. 
 
+# Create Data Set with LLM, OpenAI GPT.3.5-Turbo - (see classification_by_open_ai/llm_classifier.py):
+- First step, adapt promt in the playground of OpenAI and send a lot of messages:
+- https://platform.openai.com/playground/p/default-grammar?mode=chat&model=gpt-3.5-turbo
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/72b15340-87c5-42c8-a6c3-0dc633909df8)
+
+- Selected system promt (consulted with GPT4 * 4): You are a sophisticated tool developed for scrutinizing Twitter messages. Your primary responsibility is to identify and correct spelling and grammar mistakes within these messages. Although Twitter is known for its informal language and slang, your objective includes distinguishing between acceptable informal expressions and actual spelling or grammatical inaccuracies. This means contractions should be used correctly (e.g., "I'm" instead of "im"), and verbs should be in their proper form (e.g., "making" instead of "makin"), even in the midst of slang or informal contexts. Your analysis should bypass the slang itself unless it directly leads to a spelling or grammatical mistake. Upon reviewing a message, respond with "yes" if it adheres to standard spelling and grammar rules, considering the nuances of Twitter's informal communication. If any errors are present, reply with "no" and concisely specify each error found, emphasizing solely the spelling and grammatical issues without critiquing the informal or slang usage, unless it constitutes an error in spelling or grammar.
+- Selected model: GPT3-3.5-Turbo:
+- Pros:
+  - Afordable, classify 10K messages ~1.5 with this long prompt...
+  - Quite accurate in most cases and know informal english and social media tweets.
+- Cons:
+  - GPT-4.0-Turbo is much better but coset x10
+  - Limits on daily and hourly tokens.
+- Ho to classify?
+- It's a long task so we send 10 messages and save response (proved to be right, connection not always stable).
+- API: Tempratur and top_p not realy workig on the API but result are genraly ok and we can deal with errors.
+- Createing "raw_train_tweets_classified_open_ai.csv"
+
+## Pre-Process for train:
+
+
 
 
 
