@@ -36,15 +36,27 @@ It has trained on social media style messages and will support informal english,
     - Same for shortcuts and other, seems like the LLM classifiers later can deal with them.
   - General:
     - DS is 140 character in the majority (see below for box plots), I decided to clean all above 280 charactes and below 3 out of the DS and POC. 
-- DS creation:
-  - Spell check
-  - Grammer check
-  - Clasify and prepare all data
+- DS creation (with OpenAI GPT.3.5-Turbo):
+  - Looking to create a ground of truth I choose the OpenAI due to the API availability.
+  - The "playground" OpenAI offer helped me to form the right promt for my tweets and evalute the quality. 
+  - pros:
+    - Proven industry statndard.
+    - Availability.
+    - low price.
+    - Fast.
+  - Cons:
+    - Limit of 10k messages a day (I'm very low on the tears, company get much more)
+    - Not as good as gpt-4.0-trubo.
+    - API not perfect, you can't realy set temprature=0 and top_p=0. 
 - Classifier Creation:
-  - POC check on few classifiers with results
-  - Train test split and check eqality
-  - Train classifier
-  - Try to different aproch (if time allow)
+  - DistilBert was chosen due to the eash of train and proven record on text simple calssifications tasks.
+  - Pros:
+    - 65M parameters but get the work done for simple tasks.
+    - Light, ~200MB with 65M parameters.
+    - Fast on GPU and CPU if needed for inference.
+    - Short train time compared to Bert / Roberta / GPT-2 that were candidate for this.
+  - Cons:
+    - I took Hugging Face version with PyTorch, it was proably not the best: change the class weights and everyhting didn't work (
 - Web service:
   - Create Rest server to receive messages and return classificatons
   - Expend to mutiple messaes
