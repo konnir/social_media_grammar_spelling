@@ -86,7 +86,7 @@ It has trained on social media style messages and will support informal english,
 - Looking on messages lenth:
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/5e80b75a-9bbe-48ee-9113-2caf7b0b1327)
 
-
+- most frequent length is 140 (box plot later)
 
 
 
