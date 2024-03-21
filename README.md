@@ -13,6 +13,10 @@ It has trained on social media style messages and will support informal english,
 
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/2a9bac10-6ca1-40ca-9226-7daf0445f054)
 
+# Scond, How can I work with it?
+
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/01227d23-e5dd-4006-b541-3502d995fb8c)
+
 
 ## Content:
 - Collection and pre-processing of X messages:
