@@ -87,6 +87,15 @@ It has trained on social media style messages and will support informal english,
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/5e80b75a-9bbe-48ee-9113-2caf7b0b1327)
 
 - most frequent length is 140 (box plot later)
+- Looking on Tweeter specials: RT (22K), DM(13K), "t.com" - no need to remove them.
+- Decide to convert all text from html to plain text (came out in the icons). 
+- Looking into icons:
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/b4a901da-e31b-4fa2-b44a-6a3ddc39d071)
+
+- Looking on icons and symboles, also no need to remove:
+ ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/fc8b5919-5bcb-4d1c-a3a0-58dff8aca0f3)
+
+- save to clean_train_tweets.csv for later work. 
 
 
 
