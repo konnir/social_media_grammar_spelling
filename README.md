@@ -6,6 +6,14 @@
 # x_grammar_spelling
 Check grammar and spelling on X messages with concideration on use of slang, shortcuts and hashtags.
 
+Welcome to the Tweet Checker!
+It has trained on social media style messages and will support informal english, and all tweeter special symbols. 
+
+# First, what is can it do (demo taste)?
+
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/2a9bac10-6ca1-40ca-9226-7daf0445f054)
+
+
 ## Content:
 - Collection and pre-processing of X messages:
   - Collect DS - download and validate X messages to be used in DS 
