@@ -115,7 +115,35 @@ It has trained on social media style messages and will support informal english,
 - API: Tempratur and top_p not realy workig on the API but result are genraly ok and we can deal with errors.
 - Createing "raw_train_tweets_classified_open_ai.csv"
 
-## Pre-Process for train:
+## Pre-Process for train (look at /classification_by_open_ai/llm_clean_up_and_order.ipynb):
+- First look:
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/2b675a3f-f9fb-49dc-a9e4-c69648c4a0c7)
+
+- ones = 24K
+- zeros = 6.5K
+- fixes to OpenAI result:
+  - "yes" -> 1:
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/dfdb3574-1a62-4b3a-ac75-32502f2560e1)
+
+  - "no errors found" -> 1:
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/f1f95841-04fc-411e-9643-1472166a543d)
+
+  - "no errors" -> 1
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/aa93a43f-bae9-48e4-8458-5e44f1d1a7ee)
+
+  - also "no, there are no errors" -> 1
+    
+- Now the time to look on the DS (~30K):
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/928720c9-298f-43a8-bcef-4ce3b57158d8)
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/3bf45b80-1620-4ccf-bec8-939e25018ecc)
+
+- saving to "clean_train_tweets_classified_open_ai.csv" for further work. 
+
+
+
+## Train:
+- Model is DistilBERT - small 66M parameters that is reccomanded everywere to this task and can allow multiple train in low budget.
+- Pre-Process OpenAI response:
 
 
 
