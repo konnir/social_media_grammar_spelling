@@ -22,10 +22,12 @@ It has trained on social media style messages and will support informal english,
 - Collection and pre-processing of X messages:
   - Tried to look on X API to scrape tweets from there and got cold shoulder from the new Management, only 1500 can be scraped for day with frighting license. 
   - Collected many tweets data sets from all over the internet (turn out that the license on X change and many were deleted).
-  - The chosen data set is a huge (4.5M) messages:
+  - The chosen data set is a huge (5M) messages:
     - US tweets on different subjects created for geo-location research.
     - collected in 2009-2010 (more than enough for POC use, old informal English and terms.
-    - From above 110K different users.  
+    - From about 110K different users.
+    - DS Source: https://archive.org/details/twitter_cikm_2010
+    - Article: https://www.researchgate.net/publication/221614898_You_are_where_you_Tweet_A_content-based_approach_to_geo-locating_Twitter_users
   - Basic clean - empty, duplicated, URL, special characters
     - Fairly clean DS - main work was to remove just one @ annotation and to decode html.  
   - Handle X special -
