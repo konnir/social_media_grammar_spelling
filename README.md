@@ -203,6 +203,6 @@ You are a sophisticated tool developed for scrutinizing Twitter messages. Your p
 
 ## Licence:
 - The work here is for reasearch purpose.
-- All Original code done by the author is free to us in any way. 
-- Data or / and third party used here belong to their creators and it's user responsiblity to comply with their licences. 
-- X dataset belong to X (Tweeter), it's user responsiblity to comply with their licences. 
+- All Original code done by the author is free to use in any way. 
+- Data or / and third party used here belong to their creators and it is user responsiblity to comply with their licences. 
+- X dataset belong to X (Tweeter), it is user responsiblity to comply with their licences. 
