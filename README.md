@@ -17,6 +17,32 @@ It has trained on social media style messages and will support informal english,
 
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/01227d23-e5dd-4006-b541-3502d995fb8c)
 
+## The code - all in the Git, follow this order for simplicity:
+- Server: 
+  - tweets_server.py -  Fast API server code. 
+  - tweet_predict/tweets_predictor.py - Class to classify if Tweets are correct from the Grammar and Spelling only.
+- Prediction model:
+  - /model - hold the model and the tokenizer files (GIT LFS). 
+- Data Set Exploration:
+  - ds_exploration/5_M_ds_set_up.ipynb - notebook for full data exploration and set up for creating labels and trains.
+  - ds_exploration/5_M_ds_set_up.ipynb - small addition to the above (found later).
+- Labels Creations by OpenAI API:
+  - classification_by_open_ai/llm_classifier.py - Classify the tweets to yes and no according to grammar using llm keeping track on work done
+  - classification_by_open_ai/llm_clean_up_and_order.ipynb - notebook to explore and handle all the cleaning and ordering of the OpenAI result (sometimes messy). 
+  - prompts/x_classify_system_prompt.txt - system prompt for X classification (long).
+- Fine Tune DistilBERT
+  - classification_distil_bert/distilbert_x_model.ipynb - notebook to explore option for DistilBERT fine tune on the data including class weight and - multiple models, epochs and save TEST for UI demo later. 
+- UI and Demo:
+  - templates/index.html - simpleJS based demo to test and get direct impression for demonstration and R&D purposes. 
+  - static/images - images folder for the project. 
+  - demo_texts/demo_messages.py - Class to create a demo of a random message from a list and give back prediction and errors
+  - static/texts/balanced_test_df.csv -  a TEST ds with balanced valid and invalid messages and their errors from OpenAI for the "Demo" button 
+- Data:
+  - data/raw_train_tweets_classified_open_ai.csv - about 3M of the full raw data set (git LFS, 688 MB)
+  - data/clean_train_tweets.csv - DS after send to open AI and enriched with "labels" and "error" columns (git LFS, 8 MB)
+  - data/clean_train_tweets_classified_open_ai.csv - ds for train after cleanup OpenAI issues (git LFS, 4 MB)
+- Other:
+  - resources_and_plan/X_resources.ods - list of resources for tweets. 
 
 ## Content (short summary):
 - Collection and pre-processing of X messages:
