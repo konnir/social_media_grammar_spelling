@@ -15,7 +15,7 @@ It has trained on social media style messages and will support informal english,
 
 # Second, How can I work with it?
 
-![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/01227d23-e5dd-4006-b541-3502d995fb8c)
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/90fc849d-599f-4a88-9818-7c806a2cdfd5)
 
 ## The code - all in the Git, follow this order for simplicity:
 - Server: 
