@@ -139,15 +139,46 @@ It has trained on social media style messages and will support informal english,
 
 - saving to "clean_train_tweets_classified_open_ai.csv" for further work. 
 
-
-
-## Train:
+## Train  (look at /classification_by_open_ai/distilbert_x_model.ipynb):
 - Model is DistilBERT - small 66M parameters that is reccomanded everywere to this task and can allow multiple train in low budget.
-- Pre-Process OpenAI response:
+- In the future bigger models shoudl be tested.
+- Framwork is PyTorch on Hugging Face for simplicity. 
+- First look the text length we can see a little bias btween ones and zeros in term of length:
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/4e1cf860-c4e5-4be6-8282-30bf6ba72e92)
 
+- Splitting to train and test.
+- For now validation is not splitted due to issues with HF infrastructure.
+- Another look on the test train:
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/20467fcb-a569-4bc1-88f7-e0af7c848f9f)
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/cd459514-567e-4366-b105-6cc668f4fb75)
 
+- Tokenizing and preparing data laoder.
+- Pay attention max_lenght chosen to 350 tokens since our tweets are 280 Words top (English).
+- Model = DistilBertForSequenceClassification
+- training_args -> default laeaning rate, batch = 32 (about 11GB of GPU memory)
+- Train sample of 1K just to see it's working and predict on 1 -> all ok.
+- Try bigger train and result are not good so deciding on "Class Weight" (in latest HF version you need to do it by overide).
+- CustomTrainer - specially to overite compute_loose for class weights.
+- CustomCallback - Save the models during the epocs.
+- Isues: couldn't set validation and on epoc there is no train loss data, managed to bypass with wandb but had to track all losses.
+-  Train veiw of wandb:
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/b6a7feb3-be75-49c2-97ae-a5e6130fcc3c)
 
+- Result for calss weights model:
+- Epoch 6:
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/82a4f834-f6f6-463e-9911-68b56a4af328)
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/3e48ab4c-47f5-4b33-97ca-d703d46959d2)
 
+- Look on the real result show our data is still low:
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/17706122-0070-442f-88a1-049352bbf384)
+
+- Epoch 2 (best on the minority class):
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/704fee29-7834-450f-a7d9-6e090f1ee9ce)
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/157f4a9f-8335-420c-8d0b-5525f435074c)
+
+- Trying with even db (remove ones so zeros=ones):
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/7dd90302-d2ec-43c3-ae20-f94e8c4f1c53)
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/df120b58-71d6-4a53-9b8c-66c095988717)
 
 
 ## Licence:
