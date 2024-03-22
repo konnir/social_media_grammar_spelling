@@ -177,7 +177,7 @@ You are a sophisticated tool developed for scrutinizing Twitter messages. Your p
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/704fee29-7834-450f-a7d9-6e090f1ee9ce)
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/157f4a9f-8335-420c-8d0b-5525f435074c)
 
-- Trying with even db (remove ones so zeros=ones):<br>
+- Trying with even_dataset (remove ones so zeros=ones):<br>
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/7dd90302-d2ec-43c3-ae20-f94e8c4f1c53)
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/df120b58-71d6-4a53-9b8c-66c095988717)
 
