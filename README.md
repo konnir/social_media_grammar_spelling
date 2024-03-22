@@ -9,7 +9,7 @@ Check grammar and spelling on X messages with concideration on use of slang, sho
 Welcome to the Tweet Checker!
 It has trained on social media style messages and will support informal english, and all tweeter special symbols. 
 
-# First, what is can it do (demo taste)?
+# First, what is it and what it can do (demo taste)?
 
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/43631bb7-f70f-4742-8d18-74da09facc90)
 
