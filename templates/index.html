@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Checker</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 66.66%;
+        }
+        .tweet-box {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .tweet-input-area {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .tweet-input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .check-btn, .demo-btn {
+            white-space: nowrap;
+        }
+        .result {
+            font-weight: bold;
+            min-width: 50px;
+            text-align: center;
+        }
+        .ok {
+            color: green;
+        }
+        .fix {
+            color: red;
+        }
+        .error-message {
+            text-align: left;
+            font-style: italic;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="header-images">
+<!--    <img src="/static/images/anyword_logo_blue.jpg" alt="Descriptive Text" class="header-image" style="max-width: 25%; height: auto;">-->
+    <img src="/static/images/Nir_Kon_Logo.png" alt="Descriptive Text" class="header-image" style="max-width: 8%; height: auto;">
+</div>
+<h1>Tweeter Spelling and Grammar slang checker</h1>
+<div class="container">
+    <div class="tweet-box">
+        <div class="tweet-input-area">
+            <textarea class="tweet-input"></textarea>
+            <span class="error-message"></span>
+        </div>
+        <div class="buttons-and-result">
+            <div class="buttons">
+                <button class="check-btn" onclick="checkTweet(this)">Check Tweet</button>
+                <button class="demo-btn" onclick="fetchDemoMessage(this)">Demo</button>
+            </div>
+            <span class="result"></span>
+        </div>
+    </div>
+    <div class="tweet-box">
+        <div class="tweet-input-area">
+            <textarea class="tweet-input"></textarea>
+            <span class="error-message"></span>
+        </div>
+        <div class="buttons-and-result">
+            <div class="buttons">
+                <button class="check-btn" onclick="checkTweet(this)">Check Tweet</button>
+                <button class="demo-btn" onclick="fetchDemoMessage(this)">Demo</button>
+            </div>
+            <span class="result"></span>
+        </div>
+    </div>
+    <div class="tweet-box">
+        <textarea class="tweet-input"></textarea>
+        <button class="check-btn" onclick="checkTweet(this)">Check Tweet</button>
+        <span class="result"></span>
+    </div>
+    <div class="tweet-box">
+        <textarea class="tweet-input"></textarea>
+        <button class="check-btn" onclick="checkTweet(this)">Check Tweet</button>
+        <span class="result"></span>
+    </div>
+    <div class="tweet-box">
+        <textarea class="tweet-input"></textarea>
+        <button class="check-btn" onclick="checkTweet(this)">Check Tweet</button>
+        <span class="result"></span>
+    </div>
+    <div class="description">
+        <p>
+            *. Welcome to the Tweet Checker!<br>
+            *. It has trained on social media style messages and will support informal english, just paste as is!.<br>
+            *. "Check Tweet" button will preform a grammar and spelling test on your tweet and will produce OK or FIX.<br>
+            *. "Demo" button will give you random sample from the test (balanced) set of the model and it's errors if<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;present and you can check with the model by pressing "Check Tweet" to get direct impression.<br>
+            *. Please note, while working on main use cases it's a demo, work in progress and not for commercial use.
+        </p>
+    </div>
+    <img src="/static/images/bird_fix.webp" alt="Descriptive Text" class="header-image" style="max-width: 30%; height: auto;">
+</div>
+
+<script>
+    async function checkTweet(button) {
+        const tweetBox = button.closest('.tweet-box');
+        const textBox = tweetBox.querySelector('.tweet-input');
+        const resultSpan = tweetBox.querySelector('.result');
+        const tweet = textBox.value;
+        const formData = new FormData();
+        formData.append('tweet', encodeURIComponent(tweet));
+
+        try {
+            const response = await fetch('http://127.0.0.1:8082/correct_tweet', {
+                method: 'POST',
+                body: formData,
+            });
+            resultSpan.textContent = ''
+            const data = await response.json();
+            console.log(data.tweet)
+            if (data.tweet === "valid") {
+                console.log(data['1'])
+                resultSpan.textContent = 'OK';
+                resultSpan.classList.remove('fix');
+                resultSpan.classList.add('ok');
+            } else {
+                resultSpan.textContent = 'FIX';
+                resultSpan.classList.remove('ok');
+                resultSpan.classList.add('fix');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            resultSpan.textContent = 'Error';
+            resultSpan.classList.remove('ok');
+            resultSpan.classList.add('fix');
+        }
+    }
+
+    async function fetchDemoMessage(button) {
+        const tweetBox = button.closest('.tweet-box');
+        const textBox = tweetBox.querySelector('.tweet-input');
+        const resultSpan = tweetBox.querySelector('.result');
+        const errorMessageSpan = tweetBox.querySelector('.error-message');
+
+        try {
+            const response = await fetch('http://127.0.0.1:8082/demo_message', {
+                method: 'POST',
+            });
+            const data = await response.json();
+            errorMessageSpan.textContent = ''
+            textBox.value = data.text;
+            if (data.label === "invalid") {
+                errorMessageSpan.textContent = data.error;
+                errorMessageSpan.style.display = 'block'
+                resultSpan.textContent = ''
+            } else {
+                resultSpan.textContent = ''; // Clear result text
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            resultSpan.textContent = 'Error';
+            resultSpan.classList.remove('ok');
+            resultSpan.classList.add('fix');
+        }
+    }
+</script>
+
+</body>
+</html>

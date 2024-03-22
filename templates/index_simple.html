@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Checker</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 66.66%;
+        }
+        .tweet-box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+        .tweet-input {
+            width: 100%;
+            height: 3em;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+        .check-btn {
+            white-space: nowrap;
+        }
+        .result {
+            font-weight: bold;
+            min-width: 50px;
+            text-align: center;
+        }
+        .ok {
+            color: green;
+        }
+        .fix {
+            color: red;
+        }
+        .header-images {
+            max-width: 680px;
+            display: flex;
+            justify-content: space-between; /* Aligns children to each end */
+            align-items: center; /* Centers children vertically */
+        }
+        .header-image {
+            width: auto; /* Adjust based on your needs */
+            max-width: 30%; /* Adjust maximum width as needed */
+            height: auto; /* Maintain aspect ratio */
+            /* Remove display and margin styles that center and block-align images */
+        }
+    </style>
+</head>
+<body>
+<div class="header-images">
+<!--    <img src="/static/images/anyword_logo_blue.jpg" alt="Descriptive Text" class="header-image" style="max-width: 25%; height: auto;">-->
+    <img src="/static/images/Nir_Kon_Logo.png" alt="Descriptive Text" class="header-image" style="max-width: 15%; height: auto;">
+</div>
+<!--<br>-->
+<h1>Tweeter Spelling and Grammar slang checker</h1>
+<div class="container">
+    <div class="tweet-box">
+        <textarea class="tweet-input"></textarea>
+        <button class="check-btn" onclick="checkTweet(this)">Check Tweet</button>
+        <span class="result"></span>
+    </div>
+    <div class="tweet-box">
+        <textarea class="tweet-input"></textarea>
+        <button class="check-btn" onclick="checkTweet(this)">Check Tweet</button>
+        <span class="result"></span>
+    </div>
+    <div class="tweet-box">
+        <textarea class="tweet-input"></textarea>
+        <button class="check-btn" onclick="checkTweet(this)">Check Tweet</button>
+        <span class="result"></span>
+    </div>
+    <div class="tweet-box">
+        <textarea class="tweet-input"></textarea>
+        <button class="check-btn" onclick="checkTweet(this)">Check Tweet</button>
+        <span class="result"></span>
+    </div>
+    <div class="tweet-box">
+        <textarea class="tweet-input"></textarea>
+        <button class="check-btn" onclick="checkTweet(this)">Check Tweet</button>
+        <span class="result"></span>
+    </div>
+    <div class="description">
+        <p>
+            *. Welcome to the Tweet Checker!<br>
+            *. This tool helps you analyze your tweets for grammar and spelling.<br>
+            *. It has trained on social media style messages and will support informal english.<br>
+            *. Please note, while working on main use cases it's a demo and not for commercial use.
+        </p>
+    </div>
+    <img src="/static/images/bird_fix.webp" alt="Descriptive Text" class="header-image" style="max-width: 30%; height: auto;">
+</div>
+
+<script>
+    async function checkTweet(button) {
+        const textBox = button.previousElementSibling;
+        const resultSpan = button.nextElementSibling;
+        const tweet = textBox.value;
+        const formData = new FormData();
+        formData.append('1', encodeURIComponent(tweet)); // Assuming '1' as the tweet ID
+
+        try {
+            const response = await fetch('http://127.0.0.1:8082/correct_tweet?req_id=123', {
+                method: 'POST',
+                body: formData,
+            });
+            const data = await response.json();
+            if (data['1']) {
+                resultSpan.textContent = 'OK';
+                resultSpan.classList.remove('fix');
+                resultSpan.classList.add('ok');
+            } else {
+                resultSpan.textContent = 'FIX';
+                resultSpan.classList.remove('ok');
+                resultSpan.classList.add('fix');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            resultSpan.textContent = 'Error';
+            resultSpan.classList.remove('ok');
+            resultSpan.classList.add('fix');
+        }
+    }
+</script>
+
+</body>
+</html>
