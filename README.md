@@ -180,6 +180,24 @@ It has trained on social media style messages and will support informal english,
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/7dd90302-d2ec-43c3-ae20-f94e8c4f1c53)
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/df120b58-71d6-4a53-9b8c-66c095988717)
 
+- Time to decide: for now the balaced result (ones=zeros) is not the best but with higher recall and will be too strict on fix (we miss less), going for it.
+- We must have more data, specially zeros. 
+
+## Buiding Predict (see tweets_server.py and tweet_predict/tweets_predictor.py):
+- Prediction server, using the chosen model and predict result.
+- Future to predict on many reuquest at ones. 
+- Use GPU, future improvement is to use ONNX for up to *5 faster (need to know the hardware and the profile).
+- Rest Server based on Fast AI:
+  - POST
+  - /correct_tweet
+  - data in form.
+  - Response: Json with 0 for wrong and 1 for correct (Strings)
+  - See image at the top for usage in postman.
+
+## Demo UI:
+- Simple demo ui in js.
+- Takes messages from test (pre-loaded csv) and show the OpenAI response to the text.
+- Allow to check any tweet for direct impression.
 
 ## Licence:
 - The work here is for reasearch purpose.
