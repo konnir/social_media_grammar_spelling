@@ -27,7 +27,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 async def main():
     return FileResponse('templates/index.html')
 
-tweets_classifier = TweetsPredictor('/home/user/IdeaProjects/x_grammar_spelling/model')
+tweets_classifier = TweetsPredictor('model')
 demo_messages = DemoMessages()
 
 @app.post("/correct_tweet")
@@ -67,4 +67,4 @@ async def demo_message() -> JSONResponse:
         raise HTTPException(status_code=500, detail="An error occurred during processing. Please try again later.") from e
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8082, log_level="warning")
+    uvicorn.run(app, host="0.0.0.0", port=8082, log_level="warning")

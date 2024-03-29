@@ -1,0 +1,11 @@
+# Ignore all files and directories
+**
+
+# But include the directories and files needed for the build
+!model/
+!tweet_predict/
+!demo_texts/
+!static/
+!templates/
+!tweets_server.py
+!requirements_docker.txt

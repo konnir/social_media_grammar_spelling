@@ -122,7 +122,7 @@
         formData.append('tweet', encodeURIComponent(tweet));
 
         try {
-            const response = await fetch('http://127.0.0.1:8082/correct_tweet', {
+            const response = await fetch(`http://${window.location.hostname}:8082/correct_tweet`, {
                 method: 'POST',
                 body: formData,
             });
@@ -153,7 +153,7 @@
         const errorMessageSpan = tweetBox.querySelector('.error-message');
 
         try {
-            const response = await fetch('http://127.0.0.1:8082/demo_message', {
+            const response = await fetch(`http://${window.location.hostname}:8082/demo_message`, {
                 method: 'POST',
             });
             const data = await response.json();
