@@ -11,7 +11,8 @@ It has trained on social media style messages and will support informal english,
 
 # First, what is it and what it can do (demo taste)?
 
-![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/660e9261-759c-4298-a984-8e22447ac8fb)
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/2b688193-3e8f-4e3f-98c5-6ff086e535b8)
+
 ***. Yes, it's a 2010 tweets - there was no Wassup back than.
 
 # Second, How can I work with it?
