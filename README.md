@@ -15,7 +15,23 @@ It has trained on social media style messages and will support informal english,
 
 ***. Yes, it's a 2010 tweets - there was no Wassup back than.
 
-# Second, How can I work with it?
+# How it was made?
+
+Data - Cheng-Caverlee-Lee geo-location tweets, 2010", 5M Tweets (used 50K for POC)
+Models:
+*. GPT-3.5-Turbo (OpenAI, 175B parameters)
+*. DistilBERT (distilbert-base-uncased, 134M parameters, F32, Multilingual, 2019)
+Train: 
+*. Fine tuned “DistilBERT” on 50k for binary classification task: :Valid / InValid, 
+*. PyTorch using Hugging Face
+How?
+*. Used prompt try and error to get the perfect prompt
+*. Predicted 50K tweets with GPT-3.5-Turbo as “Source Of Truth”
+Results:
+*. General accuracy is 86% (F1, micro), for "Valid" 92% (F1) and for "InValid" 59% (F1, minority class 18%).
+
+
+# How can I work with it?
 
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/90fc849d-599f-4a88-9818-7c806a2cdfd5)
 
