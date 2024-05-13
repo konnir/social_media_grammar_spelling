@@ -3,7 +3,7 @@
   <img src="https://github.com/konnir/x_grammar_spelling/assets/119952960/aaae3161-5d93-4e82-87bf-1ac468f1817a" alt="Nir_Kon_Logo_inverted (1)" width="100"/>
 </p>
 
-# Teacher Student - Tweeter Spelling and Grammar checker
+# Teacher Student - Social Media Spelling and Grammar checker
 Check grammar and spelling on X messages with consideration on use of slang, shortcuts and hashtags.
 
 Welcome to the Tweet Checker!
