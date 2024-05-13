@@ -23,12 +23,15 @@ Data:
 Models:
 - GPT-3.5-Turbo (OpenAI, 175B parameters)
 - DistilBERT (distilbert-base-uncased, 134M parameters, F32, Multilingual, 2019)
+- 
 Train: 
 - Fine tuned “DistilBERT” on 50k for binary classification task: :Valid / InValid, 
 - PyTorch using Hugging Face
+- 
 How?
 - Used prompt try and error to get the perfect prompt
 - Predicted 50K tweets with GPT-3.5-Turbo as “Source Of Truth”
+- 
 Results:
 - General accuracy is 86% (F1, micro), for "Valid" 92% (F1) and for "InValid" 59% (F1, minority class 18%).
 
