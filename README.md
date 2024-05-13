@@ -35,19 +35,16 @@ How?
 Results:
 - General accuracy is 86% (F1, micro), for "Valid" 92% (F1) and for "InValid" 59% (F1, minority class 18%).
 
-![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/3895dde2-75a2-4c94-9eef-a505d27a4d41)
-
-
-# How can I work with it?
-
 ## Idea Teacher student design (majority of LLM to decide on "ground trouth").
-![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/90fc849d-599f-4a88-9818-7c806a2cdfd5)
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/3895dde2-75a2-4c94-9eef-a505d27a4d41)
 
 ## Poc minimal setup:
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/6bba9887-694c-45e3-88a7-d0a8c946493e)
 
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/bb1b67df-deee-4531-a0a1-1da995bffb11)
 
+# How can I work with it?
+![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/90fc849d-599f-4a88-9818-7c806a2cdfd5)
 
 ## The code - all in the Git, follow this order for simplicity:
 - Server: 
