@@ -4,7 +4,7 @@
 </p>
 
 # Teacher Student - Social Media Spelling and Grammar checker
-Check grammar and spelling on X messages with consideration on use of slang, shortcuts and hashtags.
+Check grammar and spelling on social media sytle messages with consideration on use of slang, shortcuts and hashtags.
 
 Welcome to the Tweet Checker!
 It has trained on social media style messages and will support informal english, and all tweeter special symbols. 
