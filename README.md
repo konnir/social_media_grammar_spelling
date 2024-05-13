@@ -11,7 +11,9 @@ It has trained on social media style messages and will support informal english,
 
 # First, what is it and what it can do (demo taste)?
 
-Live Demo - https://x-grammar-spelling-cpu-gcp-iu5vx2gsqa-uc.a.run.app/ `(Please allow about 1 minute for the machine to wake up)`
+Live Demo - https://x-grammar-spelling-cpu-gcp-iu5vx2gsqa-uc.a.run.app/ 
+
+`*. (Please allow about 1 minute for the machine to wake up)`
 
 ![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/2b688193-3e8f-4e3f-98c5-6ff086e535b8)
 
