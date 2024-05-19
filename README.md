@@ -264,6 +264,6 @@ You are a sophisticated tool developed for scrutinizing Twitter messages. Your p
 
 ## License:
 - The work here is for research purpose.
-- All Original code done by the author is free to use in any way. 
+- All Original code done by the author is free to use in any way without any warrenty. 
 - Data (like Cheng-Caverlee-Lee , 2010", 5M Tweets), or / and third party used here belong to their creators and it is user responsibility to comply with their licenses.
 - X dataset belong to X (Tweeter), it is user responsibility to comply with their licenses. 
