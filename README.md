@@ -11,7 +11,7 @@ It has trained on social media style messages and will support informal english,
 
 # First, what is it and what it can do (demo taste)?
 
-Live Demo - [http://social.nir-kon.com](https://loading-proxy-iu5vx2gsqa-uc.a.run.app/get?url=https://x-grammar-spelling-cpu-gcp-iu5vx2gsqa-uc.a.run.app/)
+Live Demo - [http://social.nir-kon.com](https://loading-proxy-iu5vx2gsqa-uc.a.run.app/get?url=https://x-grammar-spelling-cpu-gcp-iu5vx2gsqa-uc.a.run.app&description=%22About%201%20minute%20to%20load%20(Bert%20model)%22)
 
 
 `*. (Please allow about 1 minute for the machine to wake up)`
