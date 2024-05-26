@@ -16,7 +16,7 @@ Live Demo - [http://social.nir-kon.com](https://loading-proxy-iu5vx2gsqa-uc.a.ru
 
 `*. (Please allow about 1 minute for the machine to wake up)`
 
-![image](https://github.com/konnir/x_grammar_spelling/assets/119952960/2b688193-3e8f-4e3f-98c5-6ff086e535b8)
+![image](https://github.com/konnir/social_media_grammar_spelling/assets/119952960/2586f96e-71d0-4a1f-9e23-42e082c0c9d4)
 
 ***. Yes, it's a 2010 tweets - there was no Wassup back than.
 
